@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class MaterialGroupService implements IMaterialGroupService {
 
     private final MaterialGroupRepository materialGroupRepository;
