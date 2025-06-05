@@ -21,6 +21,7 @@ public class WorkflowTaskService implements IWorkflowTask {
         newTask.setWorkflowType("Material-Request");
         newTask.setRequestType("New-Material");
         newTask.setCurrentState("Incomplete");
+        newTask.setCreatedBy(request.getCreatedBy());
         newTask.setWorkflowData(request.getWorkflowData());
         return workflowTaskRepository.save(newTask);
     }
