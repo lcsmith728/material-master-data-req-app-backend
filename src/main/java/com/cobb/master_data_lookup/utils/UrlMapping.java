@@ -96,4 +96,13 @@ public class UrlMapping {
     public static final String UOM_GET_BY_ID = "/{id}/uom";
     /*============================ End UOM API ==========================================*/
 
+    /*============================ Start Workflow Task API ========================================*/
+    public static final String WORKFLOW_TASK = MASTER_DATA_LOOKUP + API + VERSION_V1 + "/workflow-tasks";
+    public static final String WORKFLOW_TASK_CREATE = "/workflow-task/create";
+    public static final String WORKFLOW_TASK_UPDATE = "/workflow-task/{id}/update";
+    public static final String WORKFLOW_TASK_DELETE = "/workflow-task/{id}/delete";
+    public static final String WORKFLOW_TASK_GET_ALL = "/all/{createdBy}";
+    public static final String WORKFLOW_TASK_GET_BY_ID = "/{id}/workflow-task";
+    /*============================ End Workflow Task API ==========================================*/
+
 }

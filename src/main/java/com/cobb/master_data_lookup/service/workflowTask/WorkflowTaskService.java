@@ -1,8 +1,10 @@
 package com.cobb.master_data_lookup.service.workflowTask;
 
+import com.cobb.master_data_lookup.exception.ResourceNotFoundException;
 import com.cobb.master_data_lookup.model.WorkflowTask;
 import com.cobb.master_data_lookup.repository.WorkflowTaskRepository;
 import com.cobb.master_data_lookup.request.WorkflowTaskRequest;
+import com.cobb.master_data_lookup.utils.AppMessages;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +41,13 @@ public class WorkflowTaskService implements IWorkflowTask {
     @Override
     public List<WorkflowTask> getAllWorkflowTask() {
         return null;
+    }
+
+    public List<WorkflowTask> getAllWorkflowTaskByCreatedBy(String createdBy) {
+        try {
+            return workflowTaskRepository.findAllByCreatedBy(createdBy);
+        } catch (ResourceNotFoundException e) {
+            throw new ResourceNotFoundException(AppMessages.NOT_FOUND);
+        }
     }
 }

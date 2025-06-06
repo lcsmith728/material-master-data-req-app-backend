@@ -15,4 +15,6 @@ public interface IWorkflowTask {
     WorkflowTask updateWorkflowTask(WorkflowTaskRequest request, UUID id);
 
     List<WorkflowTask> getAllWorkflowTask();
+
+    List<WorkflowTask> getAllWorkflowTaskByCreatedBy(String createdBy);
 }
