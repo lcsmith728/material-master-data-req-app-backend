@@ -35,5 +35,6 @@ public class WorkflowTask {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    @Lob
     private String workflowData;
 }
