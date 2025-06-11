@@ -34,6 +34,11 @@ public class WorkflowTaskController {
         }
     }
 
+    /**
+     * This API is used to get all workflow tasks that were created by a user
+     * @param createdBy the user who created the workflow task
+     * @return a list of workflow tasks created by the user
+     */
     @RequestMapping(UrlMapping.WORKFLOW_TASK_GET_ALL)
     public ResponseEntity<ApiResponse> getAllWorkflowTasksByCreatedBy(@PathVariable String createdBy) {
         try {
