@@ -17,4 +17,6 @@ public interface IWorkflowTask {
     List<WorkflowTask> getAllWorkflowTask();
 
     List<WorkflowTask> getAllWorkflowTaskByCreatedBy(String createdBy);
+
+    void deleteAllWorkflowTaskByCreatedBy(String createdBy);
 }

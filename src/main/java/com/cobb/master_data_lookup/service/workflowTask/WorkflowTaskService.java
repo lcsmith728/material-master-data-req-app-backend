@@ -35,6 +35,7 @@ public class WorkflowTaskService implements IWorkflowTask {
 
     @Override
     public WorkflowTask updateWorkflowTask(WorkflowTaskRequest request, UUID id) {
+
         return null;
     }
 
@@ -46,6 +47,15 @@ public class WorkflowTaskService implements IWorkflowTask {
     public List<WorkflowTask> getAllWorkflowTaskByCreatedBy(String createdBy) {
         try {
             return workflowTaskRepository.findAllByCreatedBy(createdBy);
+        } catch (ResourceNotFoundException e) {
+            throw new ResourceNotFoundException(AppMessages.NOT_FOUND);
+        }
+    }
+
+    @Override
+    public void deleteAllWorkflowTaskByCreatedBy(String createdBy) {
+        try {
+            workflowTaskRepository.deleteAllByCreatedBy(createdBy);
         } catch (ResourceNotFoundException e) {
             throw new ResourceNotFoundException(AppMessages.NOT_FOUND);
         }

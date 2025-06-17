@@ -103,6 +103,7 @@ public class UrlMapping {
     public static final String WORKFLOW_TASK_DELETE = "/workflow-task/{id}/delete";
     public static final String WORKFLOW_TASK_GET_ALL = "/all/{createdBy}";
     public static final String WORKFLOW_TASK_GET_BY_ID = "/{id}/workflow-task";
+    public static final String WORKFLOW_TASK_DELETE_ALL_BY_CREATED_BY = "/all/{createdBy}/delete";
     /*============================ End Workflow Task API ==========================================*/
 
 }

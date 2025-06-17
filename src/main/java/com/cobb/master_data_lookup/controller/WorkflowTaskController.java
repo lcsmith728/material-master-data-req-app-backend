@@ -47,4 +47,14 @@ public class WorkflowTaskController {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
         }
     }
+
+    @RequestMapping(UrlMapping.WORKFLOW_TASK_DELETE_ALL_BY_CREATED_BY)
+    public ResponseEntity<ApiResponse> deleteAllWorkflowTasksByCreatedBy(@PathVariable String createdBy) {
+        try {
+            workflowTaskService.deleteAllWorkflowTaskByCreatedBy(createdBy);
+            return ResponseEntity.ok(new ApiResponse("Workflow tasks deleted successfully", null));
+        } catch (Exception e) {
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
+        }
+    }
 }
