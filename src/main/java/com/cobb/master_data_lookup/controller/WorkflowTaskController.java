@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 @RestController
@@ -53,6 +55,17 @@ public class WorkflowTaskController {
         try {
             workflowTaskService.deleteAllWorkflowTaskByCreatedBy(createdBy);
             return ResponseEntity.ok(new ApiResponse("Workflow tasks deleted successfully", null));
+        } catch (Exception e) {
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
+        }
+    }
+
+    @PutMapping(UrlMapping.WORKFLOW_TASK_UPDATE)
+    public ResponseEntity<ApiResponse> updateWorkflowTask(@PathVariable UUID id, @RequestBody WorkflowTaskRequest request) {
+        try {
+            return ResponseEntity.ok(new ApiResponse("Workflow task updated successfully", workflowTaskService.updateWorkflowTask(request, id)));
+        } catch (ResourceNotFoundException e) {
+            return ResponseEntity.badRequest().body(new ApiResponse(e.getMessage(), null));
         } catch (Exception e) {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
         }

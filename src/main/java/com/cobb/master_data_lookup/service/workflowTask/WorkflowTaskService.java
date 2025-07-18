@@ -30,13 +30,19 @@ public class WorkflowTaskService implements IWorkflowTask {
 
     @Override
     public WorkflowTask getWorkflowTaskById(UUID id) {
-        return null;
+        return workflowTaskRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException(AppMessages.NOT_FOUND));
     }
 
     @Override
     public WorkflowTask updateWorkflowTask(WorkflowTaskRequest request, UUID id) {
-
-        return null;
+        WorkflowTask updatedWorkflowTask = getWorkflowTaskById(id);
+        if (updatedWorkflowTask != null) {
+            updatedWorkflowTask.setId(id);
+            updatedWorkflowTask.setWorkflowData(request.getWorkflowData());
+            return workflowTaskRepository.save(updatedWorkflowTask);
+        }
+        throw new ResourceNotFoundException(AppMessages.NOT_FOUND);
     }
 
     @Override
