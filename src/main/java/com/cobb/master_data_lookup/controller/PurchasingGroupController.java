@@ -57,7 +57,7 @@ public class PurchasingGroupController {
         }
     }
 
-    @RequestMapping(UrlMapping.PURCHASING_GROUP_DELETE)
+    @DeleteMapping(UrlMapping.PURCHASING_GROUP_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             purchasingGroupService.deleteById(id);

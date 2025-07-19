@@ -57,7 +57,7 @@ public class ItemCategoryController {
         }
     }
 
-    @RequestMapping(UrlMapping.ITEM_CATEGORY_DELETE)
+    @DeleteMapping(UrlMapping.ITEM_CATEGORY_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             itemCategoryService.deleteItemCategoryById(id);

@@ -57,7 +57,7 @@ public class MrpControllerController {
         }
     }
 
-    @RequestMapping(UrlMapping.MRP_CONTROLLER_DELETE)
+    @DeleteMapping(UrlMapping.MRP_CONTROLLER_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             mrpControllerService.deleteById(id);

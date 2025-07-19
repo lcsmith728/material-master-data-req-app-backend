@@ -57,7 +57,7 @@ public class MaterialTypeController {
         }
     }
 
-    @RequestMapping(UrlMapping.MATERIAL_TYPE_DELETE)
+    @DeleteMapping(UrlMapping.MATERIAL_TYPE_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             materialTypeService.deleteMaterialTypeById(id);

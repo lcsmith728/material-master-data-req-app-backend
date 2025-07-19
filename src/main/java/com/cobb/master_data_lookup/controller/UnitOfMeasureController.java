@@ -58,7 +58,7 @@ public class UnitOfMeasureController {
         }
     }
 
-    @RequestMapping(UrlMapping.UOM_DELETE)
+    @DeleteMapping(UrlMapping.UOM_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             unitOfMeasureService.deleteById(id);

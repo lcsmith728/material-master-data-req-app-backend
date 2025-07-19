@@ -60,7 +60,7 @@ public class AvailabilityCheckController {
         }
     }
 
-    @RequestMapping(UrlMapping.AVAILABILITY_CHECK_DELETE)
+    @DeleteMapping (UrlMapping.AVAILABILITY_CHECK_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             availabilityCheckService.deleteAvailabilityCheckById(id);

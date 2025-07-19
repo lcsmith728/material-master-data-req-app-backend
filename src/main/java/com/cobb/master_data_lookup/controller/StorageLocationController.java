@@ -57,7 +57,7 @@ public class StorageLocationController {
         }
     }
 
-    @RequestMapping(UrlMapping.STORAGE_LOCATION_DELETE)
+    @DeleteMapping(UrlMapping.STORAGE_LOCATION_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             storageLocationService.deleteById(id);

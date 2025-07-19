@@ -58,7 +58,7 @@ public class PlantController {
         }
     }
 
-    @RequestMapping(UrlMapping.PLANT_DELETE)
+    @DeleteMapping(UrlMapping.PLANT_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             plantService.deleteById(id);

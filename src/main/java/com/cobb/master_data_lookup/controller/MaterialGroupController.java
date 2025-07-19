@@ -57,7 +57,7 @@ public class MaterialGroupController {
         }
     }
 
-    @RequestMapping(UrlMapping.MATERIAL_GROUP_DELETE)
+    @DeleteMapping(UrlMapping.MATERIAL_GROUP_DELETE)
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         try {
             materialGroupService.deleteMaterialGroupById(id);
