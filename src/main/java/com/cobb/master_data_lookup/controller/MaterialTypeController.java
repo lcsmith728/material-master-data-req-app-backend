@@ -45,7 +45,7 @@ public class MaterialTypeController {
         }
     }
 
-    @RequestMapping(UrlMapping.MATERIAL_TYPE_UPDATE)
+    @PutMapping(UrlMapping.MATERIAL_TYPE_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             MaterialType materialType = materialTypeService.updateMaterialType(request, id);

@@ -45,7 +45,7 @@ public class StorageLocationController {
         }
     }
 
-    @RequestMapping(UrlMapping.STORAGE_LOCATION_UPDATE)
+    @PutMapping(UrlMapping.STORAGE_LOCATION_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             StorageLocation storageLocation = storageLocationService.update(request, id);

@@ -46,7 +46,7 @@ public class UnitOfMeasureController {
         }
     }
 
-    @RequestMapping(UrlMapping.UOM_UPDATE)
+    @PutMapping(UrlMapping.UOM_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody UnitOfMeasureRequest request) {
         try {
             UnitOfMeasure unitOfMeasure = unitOfMeasureService.update(request, id);

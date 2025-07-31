@@ -48,7 +48,7 @@ public class AvailabilityCheckController {
         }
     }
 
-    @RequestMapping(UrlMapping.AVAILABILITY_CHECK_UPDATE)
+    @PutMapping(UrlMapping.AVAILABILITY_CHECK_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody AvailabilityCheckRequest request) {
         try {
             AvailabilityCheck availabilityCheck = availabilityCheckService.updateAvailabilityCheck(request, id);

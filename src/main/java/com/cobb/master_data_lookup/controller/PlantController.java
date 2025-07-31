@@ -46,7 +46,7 @@ public class PlantController {
         }
     }
 
-    @RequestMapping(UrlMapping.PLANT_UPDATE)
+    @PutMapping(UrlMapping.PLANT_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody PlantRequest request) {
         try {
             Plant plant = plantService.update(request, id);

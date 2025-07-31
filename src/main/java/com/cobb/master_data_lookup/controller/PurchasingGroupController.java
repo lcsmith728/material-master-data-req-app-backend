@@ -45,7 +45,7 @@ public class PurchasingGroupController {
         }
     }
 
-    @RequestMapping(UrlMapping.PURCHASING_GROUP_UPDATE)
+    @PutMapping(UrlMapping.PURCHASING_GROUP_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             PurchasingGroup purchasingGroup = purchasingGroupService.update(request, id);

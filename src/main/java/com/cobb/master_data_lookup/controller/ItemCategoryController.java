@@ -45,7 +45,7 @@ public class ItemCategoryController {
         }
     }
 
-    @RequestMapping(UrlMapping.ITEM_CATEGORY_UPDATE)
+    @PutMapping(UrlMapping.ITEM_CATEGORY_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             ItemCategory itemCategory = itemCategoryService.updateItemCategory(request, id);

@@ -45,7 +45,7 @@ public class MaterialGroupController {
         }
     }
 
-    @RequestMapping(UrlMapping.MATERIAL_GROUP_UPDATE)
+    @PutMapping(UrlMapping.MATERIAL_GROUP_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             MaterialGroup materialGroup = materialGroupService.updateMaterialGroup(request, id);

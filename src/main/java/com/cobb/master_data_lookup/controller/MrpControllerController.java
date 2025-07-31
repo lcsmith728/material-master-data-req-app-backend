@@ -45,7 +45,7 @@ public class MrpControllerController {
         }
     }
 
-    @RequestMapping(UrlMapping.MRP_CONTROLLER_UPDATE)
+    @PutMapping(UrlMapping.MRP_CONTROLLER_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             MrpController mrpController = mrpControllerService.update(request, id);

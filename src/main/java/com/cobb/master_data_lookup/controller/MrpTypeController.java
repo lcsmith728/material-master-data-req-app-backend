@@ -45,7 +45,7 @@ public class MrpTypeController {
         }
     }
 
-    @RequestMapping(UrlMapping.MRP_TYPE_UPDATE)
+    @PutMapping(UrlMapping.MRP_TYPE_UPDATE)
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody MasterDataRequest request) {
         try {
             MrpType mrpType = mrpTypeService.updateMrpType(request, id);
