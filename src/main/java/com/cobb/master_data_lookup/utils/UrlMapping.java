@@ -106,4 +106,19 @@ public class UrlMapping {
     public static final String WORKFLOW_TASK_DELETE_ALL_BY_CREATED_BY = "/all/{createdBy}/delete";
     /*============================ End Workflow Task API ==========================================*/
 
+    /*============================ Start Product Hierarchy API ========================================*/
+    public static final String PRODUCT_HIERARCHY = MASTER_DATA_LOOKUP + API + VERSION_V1 + "/product-hierarchy";
+    public static final String GET_ALL_GENERATION_LEVELS = "/generation-levels";
+    public static final String CREATE_GENERATION_LEVEL = "/generation-level/create";
+    public static final String GET_ALL_PRODUCT_TYPES = "/product-types";
+    public static final String CREATE_PRODUCT_TYPE = "/product-type/create";
+    public static final String GET_ALL_GROUPS = "/groups";
+    public static final String CREATE_GROUP = "/group/create";
+    public static final String GET_ALL_PRODUCTS = "/products";
+    public static final String CREATE_PRODUCT = "/product/create";
+    public static final String DELETE_PRODUCT = "/product/{code}/delete";
+    public static final String UPDATE_PRODUCT = "/product/{code}/update";
+    public static final String PRODUCT_TREE = "/product/tree";
+    /*============================ End Product Hierarchy API ==========================================*/
+
 }
